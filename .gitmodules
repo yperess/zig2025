@@ -1,0 +1,19 @@
+[submodule "third_party/zephyr"]
+	path = third_party/zephyr
+	url = https://github.com/yperess/zephyr.git
+	branch = peress/cpp_atomic_compare_exchange
+[submodule "third_party/pigweed"]
+	path = third_party/pigweed
+	url = https://pigweed.googlesource.com/pigweed/pigweed
+[submodule "third_party/nanopb"]
+	path = third_party/nanopb
+	url = https://github.com/zephyrproject-rtos/nanopb
+[submodule "third_party/modules/hal/rpi_pico"]
+	path = third_party/modules/hal/rpi_pico
+	url = https://github.com/zephyrproject-rtos/hal_rpi_pico
+[submodule "third_party/modules/hal/cmsis_6"]
+	path = third_party/modules/hal/cmsis_6
+	url = https://github.com/zephyrproject-rtos/cmsis_6
+[submodule "third_party/modules/hal/atmel"]
+	path = third_party/modules/hal/atmel
+	url = https://github.com/zephyrproject-rtos/hal_atmel

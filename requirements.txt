@@ -1,0 +1,3 @@
+-r third_party/zephyr/scripts/requirements-base.txt
+-r third_party/zephyr/scripts/requirements-build-test.txt
+-r third_party/zephyr/scripts/requirements-run-test.txt

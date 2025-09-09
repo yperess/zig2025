@@ -1,0 +1,16 @@
+buildconfig = "//BUILDCONFIG.gn"
+
+default_args = {
+  # Set the nanopb directory for protobuf generation.
+  dir_pw_third_party_nanopb = "//third_party/nanopb"
+
+  # Default gn build virtualenv target.
+  pw_build_PYTHON_BUILD_VENV = "//:zig2025_demo_build_venv"
+
+  pw_build_PIP_REQUIREMENTS = [ "//requirements.txt" ]
+
+  pw_build_TEST_TRANSITIVE_PYTHON_DEPS = false
+
+  # Don't allow a plain .options file extension for pwpb protos.
+  pw_protobuf_compiler_NO_GENERIC_OPTIONS_FILES = true
+}

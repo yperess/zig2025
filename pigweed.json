@@ -1,0 +1,56 @@
+{
+  "pw": {
+    "pw_cli": {
+      "plugins": {
+        "console": {
+          "module": "zig2025_demo_tools.console",
+          "function": "main"
+        },
+        "package": {
+          "module": "pw_package.pigweed_packages",
+          "function": "main"
+        }
+      }
+    },
+    "pw_presubmit": {
+      "format": {
+        "python_formatter": "black",
+        "exclude": [
+          "^patches\\.json$"
+        ]
+      }
+    },
+    "pw_env_setup": {
+      "root_variable": "ZIG2025_DEMO_ROOT",
+      "relative_pigweed_root": "third_party/pigweed",
+      "cipd_package_files": [
+        "third_party/pigweed/pw_env_setup/py/pw_env_setup/cipd_setup/bazelisk.json",
+        "third_party/pigweed/pw_env_setup/py/pw_env_setup/cipd_setup/cmake.json",
+        "third_party/pigweed/pw_env_setup/py/pw_env_setup/cipd_setup/default.json",
+        "third_party/pigweed/pw_env_setup/py/pw_env_setup/cipd_setup/kythe.json",
+        "third_party/pigweed/pw_env_setup/py/pw_env_setup/cipd_setup/zephyr_sdk.json"
+      ],
+      "virtualenv": {
+        "gn_root": ".",
+        "gn_targets": [
+          ":pip_install_zig2025_demo_tools.install"
+        ],
+        "requirements": [
+          "requirements.txt"
+        ],
+        "extra_vars": {
+          "ZEPHYR_SDK_INSTALL_DIR": "${PW_ZEPHYR_SDK_CIPD_INSTALL_DIR}"
+        }
+      },
+      "gni_file": "build_overrides/pigweed_environment.gni",
+      "required_submodules": [
+        "third_party/hal/atmel",
+        "third_party/hal/cmsis_6",
+        "third_party/hal/rpi_pico",
+        "third_party/nanopb",
+        "third_party/pigweed",
+        "third_party/zephyr"
+      ]
+    }
+  }
+}

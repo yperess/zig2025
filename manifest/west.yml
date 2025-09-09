@@ -1,0 +1,33 @@
+manifest:
+  remotes:
+    - name: zephyrproject-rtos
+      url-base: https://github.com/zephyrproject-rtos
+    - name: pigweed
+      url-base: https://pigweed.googlesource.com/pigweed
+
+  projects:
+    - name: zephyr
+      path: third_party/zephyr
+      remote: zephyrproject-rtos
+      revision: main
+      west-commands: scripts/west-commands.yml
+    - name: nanopb
+      path: third_party/nanopb
+      remote: zephyrproject-rtos
+      revision: master
+    - name: pigweed
+      path: third_party/pigweed
+      remote: pigweed
+      revision: main
+    - name: hal_rpi_pico
+      path: third_party/modules/hal/rpi_pico
+      remote: zephyrproject-rtos
+      revision: zephyr
+    - name: hal_atmel
+      path: third_party/modules/hal/atmel
+      remote: zephyrproject-rtos
+      revision: master
+    - name: cmsis_6
+      path: third_party/modules/hal/cmsis_6
+      remote: zephyrproject-rtos
+      revision: main

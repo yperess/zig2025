@@ -1,0 +1,25 @@
+import("//build_overrides/pigweed.gni")
+
+import("$dir_pw_build/python.gni")
+
+pw_python_package("tools") {
+  setup = [
+    "pyproject.toml",
+    "setup.cfg",
+  ]
+  sources = [
+    "zig2025_demo_tools/__init__.py",
+    "zig2025_demo_tools/console.py",
+  ]
+  python_deps = [
+    "$dir_pw_build/py",
+    "$dir_pw_cli/py",
+    "$dir_pw_log/py",
+    "$dir_pw_presubmit/py",
+    "$dir_pw_protobuf:common_protos.python",
+    "$dir_pw_rpc:protos.python",
+    "$dir_pw_system/py",
+    # "//app/modules/rpc:zig2025_demo_protos.python",
+  ]
+  pylintrc = "$dir_pigweed/.pylintrc"
+}

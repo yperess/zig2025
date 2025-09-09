@@ -1,0 +1,49 @@
+import("//build_overrides/pigweed.gni")
+
+import("$dir_pw_build/python.gni")
+import("$dir_pw_build/python_dist.gni")
+import("$dir_pw_build/python_venv.gni")
+
+group("default") {
+    deps = [
+        ":python.lint",
+        ":python.tests",
+    ]
+}
+
+_zig2025_demo_python_packages = [ "//tools:tools" ]
+
+pw_python_group("python") {
+    python_deps = _zig2025_demo_python_packages
+}
+
+_pigweed_python_packages = [
+  "$dir_pw_env_setup:core_pigweed_python_packages",
+]
+
+_all_python_packages =  _zig2025_demo_python_packages + _pigweed_python_packages
+
+pw_python_venv("zig2025_demo_build_venv") {
+  path = "$root_build_dir/python-venv"
+  constraints = pw_build_PIP_CONSTRAINTS
+  requirements = pw_build_PIP_REQUIREMENTS
+
+  # Ensure all third party Python dependencies are installed into this venv.
+  # This works by checking the setup.cfg files for all packages listed here and
+  # installing the packages listed in the [options].install_requires field.
+  source_packages = _all_python_packages
+}
+
+pw_python_distribution("zig2025_demo_python_distribution") {
+  packages = _all_python_packages
+  generate_setup_cfg = {
+    name = "zig2025-demo-tools"
+    version = "0.0.1"
+    append_date_to_version = true
+    include_default_pyproject_file = true
+  }
+}
+
+pw_python_pip_install("pip_install_zig2025_demo_tools") {
+    packages = [ ":zig2025_demo_python_distribution" ]
+}
