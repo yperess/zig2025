@@ -1,7 +1,6 @@
 [submodule "third_party/zephyr"]
 	path = third_party/zephyr
-	url = https://github.com/yperess/zephyr.git
-	branch = peress/cpp_atomic_compare_exchange
+	url = https://github.com/zephyrproject-rtos/zephyr
 [submodule "third_party/pigweed"]
 	path = third_party/pigweed
 	url = https://pigweed.googlesource.com/pigweed/pigweed

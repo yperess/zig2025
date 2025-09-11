@@ -21,3 +21,8 @@
       ```
       west build -p -b rpi_pico/rp2040 app
       ```
+
+4. Flash and ppen the console
+   ```
+   west flash -r openocd && pw console --token-databases build/tokendatabase.bin
+   ```

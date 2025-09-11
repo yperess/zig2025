@@ -1,0 +1,15 @@
+description: GPIO output pin and input pin pair
+
+compatible: "zig2025,gpio-loop"
+
+properties:
+  in-gpios:
+    type: phandle-array
+    required: true
+    description: |
+      The GPIO connected as an input.
+  out-gpios:
+    type: phandle-array
+    required: true
+    description: |
+      The GPIO connected as an output.

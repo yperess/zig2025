@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package com.google.zig2025;
+
+service ZigService {
+    rpc SetLed(SetLedRequest) returns (SetLedResponse) {}
+    rpc TriggerInterrupt(TriggerInterruptRequest) returns (TriggerInterruptResponse) {}
+    rpc GetInterruptCount(GetInterruptCountRequest) returns (GetInterruptCountResponse) {}
+}
+
+message SetLedRequest {
+    bool on = 1;
+}
+
+message SetLedResponse {}
+
+message TriggerInterruptRequest {}
+
+message TriggerInterruptResponse {}
+
+message GetInterruptCountRequest {}
+
+message GetInterruptCountResponse {
+    uint32 count = 1;
+}

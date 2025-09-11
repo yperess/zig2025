@@ -1,0 +1,9 @@
+#include "zephyr/dt-bindings/gpio/gpio.h"
+
+/ {
+    interrupt-loop {
+        compatible = "zig2025,gpio-loop";
+        in-gpios = <&piod 11 (GPIO_ACTIVE_HIGH)>;
+        out-gpios = <&piod 10 (GPIO_ACTIVE_HIGH)>;
+    };
+};

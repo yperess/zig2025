@@ -35,7 +35,15 @@ set_property(GLOBAL APPEND PROPERTY extra_post_build_commands
 find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 project(zig2025)
 
+add_subdirectory(di)
+add_subdirectory(rpc)
+
 target_sources(app
   PRIVATE
     src/main.cc
+)
+
+target_link_libraries(app PRIVATE
+  zig2025_di
+  zig2025_service
 )

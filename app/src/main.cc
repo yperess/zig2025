@@ -2,10 +2,8 @@
 
 #include "pw_log/log.h"
 #include "pw_system/init.h"
-
-namespace pw::system {
-void UserAppInit() {}
-}  // namespace pw::system
+#include "pw_system/rpc_server.h"
+#include "zig2025/di/app.h"
 
 int main() {
   pw::system::Init();

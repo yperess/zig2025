@@ -19,7 +19,7 @@ pw_python_package("tools") {
     "$dir_pw_protobuf:common_protos.python",
     "$dir_pw_rpc:protos.python",
     "$dir_pw_system/py",
-    # "//app/modules/rpc:zig2025_demo_protos.python",
+    "//app/rpc:zig2025_protos.python",
   ]
   pylintrc = "$dir_pigweed/.pylintrc"
 }

@@ -3,3 +3,5 @@
 build/
 environment/
 twister-out*/
+
+pw_console-*.txt
