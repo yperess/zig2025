@@ -6,6 +6,10 @@
           "module": "zig2025_demo_tools.console",
           "function": "main"
         },
+        "device_test": {
+          "module": "zig2025_demo_tools.interrupt_test",
+          "function": "main"
+        },
         "package": {
           "module": "pw_package.pigweed_packages",
           "function": "main"

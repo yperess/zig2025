@@ -10,6 +10,7 @@ pw_python_package("tools") {
   sources = [
     "zig2025_demo_tools/__init__.py",
     "zig2025_demo_tools/console.py",
+    "zig2025_demo_tools/interrupt_test.py",
   ]
   python_deps = [
     "$dir_pw_build/py",

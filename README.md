@@ -26,3 +26,8 @@
    ```
    west flash -r openocd && pw console --token-databases build/tokendatabase.bin
    ```
+
+5. Run the integration tests
+   ```
+   pw device_test --token-databases build/tokendatabase.bin
+   ```
